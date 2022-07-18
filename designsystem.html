@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Bookmark landing page</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="basic.css">
+  <script src="drive.js" defer></script>
+
+</head>
+<!-- html nach desktop mit den entsprechenden utility classes, css nach mobile first -->
+<!-- header main footer sections -->
+<!-- FIRST DESIGN; SECOND FUNCTIONALITY -->
+<!-- use clamp --fs-900: clamp(5rem, 5vw + 1rem, 9.375rem) -->
+<!-- button on focus on top -->
+<!-- aria-labeling for screenreader -->
+<!--  -->
+<body class="space">
+    <h1>The design system</h1>
+    <!-- primary navigation -->
+    <h2>primary navigation</h2>
+    <nav>
+        <ul role='list' class="primary-navigation flex uppercase">
+            <li>Features</li>
+            <li>Pricing</li>
+            <li>Contact</li>
+            <button class="button red-button background-color-soft-red font-color-white uppercase">Login</button>
+        </ul>
+    </nav>
+
+    <h2>Blue and gray button</h2>
+    <button class="button blue-button background-color-soft-blue font-color-white">Get it on Chrome</button>
+    <button class="button gray-button font-color-grayish-blue">Get it on Firefox</button>
+
+    <h2>Show pictures</h2>
+    <picture>
+        <img class="teaser-image" src=".\images\illustration-features-tab-1.svg" alt="">
+    </picture>
+
+    <h2>Tabs</h2>
+    <div class="tabs">
+        <button aria-selected="true" class="tab">Simple Bookmarking</button>
+        <button aria-selected="false" class="tab">Speedy Searching</button>
+        <button aria-selected="false" class="tab">Easy Sharing</button>
+    </div>
+
+    <h2>Extension Tab</h2>
+    <div class="extension-tab-chrome">
+        <img class="extension-tab-logo" src=".\images\logo-chrome.svg" alt="logo chrome" width="500" height="600"> 
+        <div class="extension-tab-information">
+            <h3 class="extension-tab-information-h3">Add to Chrome</h3>
+            <h4 class="font-color-grayish-blue font-weight-400">Minimum version 62</h4>
+        </div>
+        <div class="extension-tab-dotted-line"></div>
+        <button class="extension-tab-button button blue-button background-color-soft-blue font-color-white">Add & Install Extension</button>
+    </div>
+
+    <h2>Drive out menu</h2>
+    <div class="drive-out-menu">
+        <!-- Question 1 -->
+        <div class="drive-out-menu-group flex">
+            <p class="question" id="question">What is Bookmark?</p>
+            <button class="drive-out-menu-button" id="drive-out-menu-button">
+                <span class="sr-only">open/close</span>
+                <span class="close" id="close">&#8744;</span>
+                <span hidden class="open" id="open">&#8743;</span></button>
+        </div>
+        <!-- Answer 1 -->
+            <p hidden class="answer" id="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt 
+            justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.</p>
+        <!-- Question 2 -->
+        <div class="drive-out-menu-group flex">
+            <p class="question" id="question">How can I request a new browser?</p>
+            <button class="drive-out-menu-button" id="drive-out-menu-button">
+                <span class="sr-only">open/close</span>
+                <span class="close" id="close">&#8744;</span>
+                <span hidden class="open" id="open">&#8743;</span></button>
+        </div>
+        <!-- Answer 2 -->
+        <p hidden class="answer">Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. 
+            Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, 
+            ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. 
+            Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.</p>
+        <!-- Question 3 -->
+        <div class="drive-out-menu-group flex">
+            <p class="question" id="question">Is there a mobile app?</p>
+            <button class="drive-out-menu-button" id="drive-out-menu-button">
+                <span class="sr-only">open/close</span>
+                <span class="close" id="close">&#8744;</span>
+                <span hidden class="open" id="open">&#8743;</span></button>
+        </div>
+        <!-- Answer 3 -->
+        <p hidden class="answer">Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum 
+            urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed 
+            sollicitudin ex et ultricies bibendum.</p>
+        <!-- Question 4 -->
+        <div class="drive-out-menu-group flex">
+            <p class="question" id="question">What about other Chromium browsers?</p>
+            <button class="drive-out-menu-button" id="drive-out-menu-button">
+                <span class="sr-only">open/close</span>
+                <span class="close" id="close">&#8744;</span>
+                <span hidden class="open" id="open">&#8743;</span></button>
+        </div>
+        <!-- Answer 4 -->
+        <p hidden class="answer last">Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
+            vitae neque eget nisl gravida pellentesque non ut velit.</p>
+    </div>
+
+    <h2>Stay up to date</h2>
+    <form class="contact-form-for-newsletter flex background-color-soft-blue" style="padding: 1rem" id="contact-form-for-newsletter" action="">
+        <div id="input-with-error"  class="error input-with-error input-with-error--no-error font-color-white">
+            <!-- type="email" -->
+            <input 
+                type="text" 
+                class="input-field" 
+                id="input-field" 
+                name="email" 
+                placholder="Enter your email adress" 
+                pattern="[a-z]{1,15}">
+             <p class="error-message" id="error-message"></p>
+        </div>
+        <input type="submit" title="Enter a valid email adress" value="Contact Us" class="button red-button submit-button background-color-soft-red font-color-white uppercase">
+    </form>
+
+
+
+</body>
+</html>
