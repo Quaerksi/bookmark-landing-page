@@ -1,6 +1,5 @@
 // window.location.href = "#footer";
 
-
 //frequently asked question section
 
 const driveOutMenuButtons = document.querySelectorAll('#drive-out-menu-button');
@@ -38,7 +37,7 @@ input.addEventListener('invalid', function(event){
     event.preventDefault();
     if ( ! event.target.validity.valid ) {
         errorMessage.textContent   = "Whoops, make sure it's an email";
-        errorMessage.style.paddingTop = '.3rem';
+        errorMessage.style.paddingBottom = '.5rem';
         errorMessage.classList.add('error');
         inputWithError.classList.remove('input-with-error--no-error')
     }
@@ -48,7 +47,7 @@ input.addEventListener('invalid', function(event){
 input.addEventListener('input', function(event){
     if ( true === errorMessage.classList.contains('error') ) {
         errorMessage.textContent   = "";
-        errorMessage.style.paddingTop = '0';
+        // errorMessage.style.paddingTop = '0';
         errorMessage.classList.remove('error');
         inputWithError.classList.add('input-with-error--no-error')
     }
@@ -57,6 +56,7 @@ input.addEventListener('input', function(event){
 
 // primary menu for smal screen size
 // TO DO: Put all in one container
+
 var headerMenuIcon = document.getElementById('header-menu-icon');
 
 var primaryNav = document.getElementById('primary-nav');
@@ -64,18 +64,61 @@ var headerLogoDark = document.getElementById('header-logo-dark');
 var headerLogoLight = document.getElementById('header-logo-light')
 var headerMenuIcon = document.getElementById('header-menu-icon');
 var socialMediaIconsHeader = document.getElementById('social-media-icons-header');
+var closeMenuX = document.getElementById('close-menu-x');
 
 let showMenu = e => {
-    // console.log('hello');
     primaryNav.style.inset = 0;
-    // headerLogoDark.style.display = 'none';
     headerLogoLight.style.display = 'flex';
     headerMenuIcon.style.display = 'none';
     socialMediaIconsHeader.style.display = 'block';
+}
 
+let closeMenu = e => {
+    primaryNav.style.inset = '-800px -800px 800px 800px ';
+    headerLogoLight.style.display = 'none';
+    headerMenuIcon.style.display = 'block';
+    socialMediaIconsHeader.style.display = 'none';
 }
 
 headerMenuIcon.addEventListener('click', showMenu);
+closeMenuX.addEventListener('click', closeMenu)
+
+
+// features
+
+var tabButtons = document.querySelectorAll('#tab-arround button');
+var bookmarking = document.getElementById('bookmarking');
+var searching = document.getElementById('searching');
+var sharing = document.getElementById('sharing');
+
+var allTabs = [bookmarking, searching, sharing];
+
+showFeature = e => {
+    // console.log(`Hello ${e.currentTarget.name}`)
+    const {name} = e.currentTarget;
+
+    tabButtons.forEach(button =>{
+        if(button.getAttribute('name') === name){
+            button.setAttribute('aria-selected', 'true');
+        } else {
+            button.setAttribute('aria-selected', 'false');
+        }
+    })
+
+    allTabs.forEach(tab => {
+        if(tab.getAttribute('id') === name ){
+            tab.removeAttribute('hidden')
+        } else {
+            tab.hidden = 'true';
+            tab.removeAttribute('aria-selected')
+        }
+    })
+    
+}
+
+tabButtons.forEach(button => button.addEventListener('click', showFeature))
+
+
 
 
 

@@ -19,10 +19,10 @@
 <!-- html nach desktop mit den entsprechenden utility classes, css nach mobile first -->
 <!-- header main footer sections -->
 <!-- FIRST DESIGN; SECOND FUNCTIONALITY -->
-<!-- use clamp --fs-900: clamp(5rem, 5vw + 1rem, 9.375rem) -->
-<!-- button on focus on top -->
+<!-- use clamp -->
+<!-- button on focus on top -> TO DO-->
 <!-- aria-labeling for screenreader -->
-<!--  -->
+
 <body class="landing-page">
 
   <header class="grid grid-header" style="--grid-gap: 2rem">
@@ -42,7 +42,7 @@
             </g>
           </g>
         </svg>
-        <p class="close-menu-x" style="font-weight: 900">&#x2715;</p>
+        <p class="close-menu-x" id="close-menu-x" style="font-weight: 900">&#x2715;</p>
       </div>
       <picture class="">
         <img class="header-menu-icon" id="header-menu-icon" src=".\images\icon-hamburger.svg" alt="">
@@ -50,33 +50,33 @@
       
       <nav class="primary-nav" id="primary-nav">
         <ul role='list' class="navigation flex uppercase">
-            <li>Features</li>
-            <li>Pricing</li>
-            <li>Contact</li>
+            <li> <a href="#">Features</a></li>
+            <li> <a href="#">Pricing</a></li>
+            <li> <a href="#">Contact</a></li>
             <button class="button button-clamp red-button background-color-soft-red font-color-white uppercase">Login</button>
         </ul>
       </nav>
 
-      <div class="social-media-icons-header">
-        <picture class="social-media-icon">
+      <div class="social-media-icons-header" id="social-media-icons-header">
+        <a href="#" class="social-media-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
             <path fill="#FFF" fill-rule="evenodd" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
           </svg>
           <!-- <img class="teaser-image icon" src=".\images\icon-facebook.svg" alt="" > -->
-        </picture>
-        <picture class="social-media-icon">
+        </a>
+        <a href="#" class="social-media-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20">
             <path fill="#FFF" fill-rule="evenodd" d="M24 2.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337.608a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 1.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 17.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 2.557z"/>
           </svg>
           <!-- <img class="teaser-image icon" src=".\images\icon-twitter.svg" alt=""> -->
-        </picture>
+        </a href="#" >
       </div>
     </div>
   </header>
 
   <main class="grid">
     <!-- first line -->
-    <div class="simple-bookmark-manager grid-place-left text-align margin-bottom">
+    <div class="simple-bookmark-manager create-max-width-small-screen grid-place-left text-align margin-bottom">
       <h1 class="primary-heading">A Simple Bookmark Manager</h1>  
       <p class="opacity">A clean and simple interface to organize your favourite websites. Open a new 
         browser tab and see your sites load instantly. Try it for free.
@@ -100,14 +100,14 @@
         Your bookmarks sync between your devices so you can access them on the go.
       </p>
       <div class="tabs tabs-features font-weight-500">
-        <div class="tab-arround">
-          <button aria-selected="true" class="tab">Simple Bookmarking</button>
+        <div class="tab-arround" id="tab-arround">
+          <button aria-selected="true" class="tab" name="bookmarking">Simple Bookmarking</button>
         </div>
-        <div class="tab-arroun">
-          <button aria-selected="false" class="tab">Speedy Searching</button>
+        <div class="tab-arround" id="tab-arround">
+          <button aria-selected="false" class="tab" name="searching">Speedy Searching</button>
         </div>
-        <div class="tab-arroun">
-          <button aria-selected="false" class="tab">Easy Sharing</button>
+        <div class="tab-arround" id="tab-arround">
+          <button aria-selected="false" class="tab"  name="sharing">Easy Sharing</button>
         </div>
       </div>
     </div>
@@ -118,8 +118,8 @@
         <img class="teaser-image" src=".\images\illustration-features-tab-1.svg" alt="">
       </picture>
     </div>
-    <div class="grid-place-right text-align">
-      <div class="tab-simple-bookmarking margin-bottom margin-top" style="">
+    <div class="features grid-place-right text-align" >
+      <div class="tab-simple-bookmarking margin-bottom margin-top" id="bookmarking">
         <h2>Bookmark in one click</h2>
         <p class="opacity">Organize your bookmarks however you like. Our simple drag-and-drop interface 
         gives you complete control over how you manage your favourite sites.
@@ -127,7 +127,7 @@
         <button class="button-tab-simple-bookmarking button button-clamp blue-button background-color-soft-blue font-color-white">More Info</button>
       </div>
 
-      <div hidden class="tab-speedy-searching margin-bottom margin-top">
+      <div hidden="" class="tab-speedy-searching margin-bottom margin-top" id="searching">
         <h2>Intelligent search</h2>
         <p class="opacity">Our powerful search feature will help you find saved sites in no time at all. 
           No need to trawl through all of your bookmarks.
@@ -135,7 +135,7 @@
         <button class="button-tab-speedy-searching button button-clamp blue-button background-color-soft-blue font-color-white">More Info</button>
       </div>
 
-      <div hidden class="tab-easy-sharing margin-bottom margin-top">
+      <div hidden="" class="tab-easy-sharing margin-bottom margin-top" id="sharing">
         <h2>Share your bookmarks</h2>
         <p class="opacity">Easily share your bookmarks and collections with others. Create a shareable 
           link that you can send at the click of a button.
@@ -145,7 +145,7 @@
     </div>
 
     <!-- fourth line -->
-    <div class="grid-place-on-both text-align margin-bottom margin-top">
+    <div class="create-max-width-small-screen grid-place-on-both text-align margin-bottom margin-top">
       <h2>Download the extension</h2>
       <p class="p-download-extension opacity">We've got more browsers in the pipeline. Please do let us know if you've 
         got a favourite you'd like us to prioritize.</p>
@@ -257,15 +257,14 @@
         <div id="input-with-error"  class="error input-with-error input-with-error--no-error font-color-white">
             <!-- type="email" -->
             <input 
-                type="text" 
+                type="email" 
                 class="input-field" 
                 id="input-field" 
                 name="email" 
-                placeholder="   Enter your email adress" 
-                pattern="[a-z]{1,15}">
+                placeholder="Enter your email adress">
             <p class="error-message" id="error-message"></p>
         </div>
-        <input type="submit" title="Enter a valid email adress" value="Contact Us" class="submit-button button red-button submit-button background-color-soft-red font-color-white uppercase">
+        <input type="submit" title="Enter a valid email adress" value="Contact Us" class="submit-button button button-clamp red-button background-color-soft-red font-color-white uppercase">
       </form>
     </div>
     <div class="grid-place-right-margin background-color-soft-blue"></div>
@@ -292,19 +291,18 @@
         </nav>
       </div>
       <div class="social-media-icons">
-        <picture class="social-media-icon">
+        <a href="#"  class="social-media-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
             <path fill="#FFF" fill-rule="evenodd" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/>
           </svg>
           <!-- <img class="teaser-image icon" src=".\images\icon-facebook.svg" alt="" > -->
-        </picture>
-        <picture class="social-media-icon">
+        </a>
+        <a href="#"  class="social-media-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20">
             <path fill="#FFF" fill-rule="evenodd" d="M24 2.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337.608a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 1.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 17.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 2.557z"/>
           </svg>
           <!-- <img class="teaser-image icon" src=".\images\icon-twitter.svg" alt=""> -->
-          
-        </picture>
+        </a>
       </div>
     </div>
     <p class="attribution grid-place-on-both">
